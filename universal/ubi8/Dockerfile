@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.3-labs
 
 # updateBaseImages.sh can't operate on SHA-based tags as they're not date-based or semver-sequential, and therefore cannot be ordered
-FROM quay.io/devfile/base-developer-image:ubi8-latest
+FROM quay.io/abazko/base-developer-image:ubi8-latest
 LABEL maintainer="Red Hat, Inc."
 
 LABEL com.redhat.component="devfile-universal-container"
@@ -57,7 +57,6 @@ ENV JAVA_HOME_21=/home/tooling/.sdkman/candidates/java/21.0.2-tem
 ENV SDKMAN_CANDIDATES_API="https://api.sdkman.io/2"
 ENV SDKMAN_CANDIDATES_DIR="/home/tooling/.sdkman/candidates"
 ENV SDKMAN_DIR="/home/tooling/.sdkman"
-ENV SDKMAN_PLATFORM="linuxx64"
 ENV SDKMAN_VERSION="5.18.2"
 
 ENV GRADLE_HOME="/home/tooling/.sdkman/candidates/gradle/current"

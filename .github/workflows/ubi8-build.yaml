@@ -51,7 +51,7 @@ jobs:
       - name: Docker Build & Push Base
         uses: docker/build-push-action@v6
         with:
-          push: ${{ github.event_name != 'pull_request' }}
+          push: false
           provenance: false
           context: base/ubi8
           tags: |
@@ -95,7 +95,7 @@ jobs:
       - name: Docker Build & Push Universal
         uses: docker/build-push-action@v6
         with:
-          push: ${{ github.event_name != 'pull_request' }}
+          push: false
           provenance: false
           context: universal/ubi8
           tags: |

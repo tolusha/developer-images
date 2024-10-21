@@ -39,7 +39,7 @@ jobs:
       - name: Docker Build & Push Base
         uses: docker/build-push-action@v6
         with:
-          push: ${{ github.event_name != 'pull_request' }}
+          push: false
           provenance: false
           context: base/ubi9
           platforms: linux/amd64, linux/arm64

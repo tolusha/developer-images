@@ -1,8 +1,9 @@
 name: Build of UBI 8 based Developer Images
 
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    branches:
+      - main
 
   workflow_call:
     # Map the workflow outputs to job outputs

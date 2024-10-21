@@ -2,8 +2,9 @@
 name: Build of UBI 9 based Developer Images
 
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build_base_ubi9_image:

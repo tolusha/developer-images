@@ -34,8 +34,8 @@ RUN curl -fsSL "https://get.sdkman.io/?rcupdate=false" | bash \
              && sed -i "s/sdkman_auto_answer=false/sdkman_auto_answer=true/g" /home/tooling/.sdkman/etc/config \
 	     && sed -i "s/sdkman_auto_env=false/sdkman_auto_env=true/g" /home/tooling/.sdkman/etc/config \
         && sdk install java 8.0.402-tem \
-        && sdk install java 11.0.22-tem"
-RUN               sdk install java 17.0.10-tem
+        && sdk install java 11.0.22-tem \
+        && sdk install java 17.0.10-tem"
 RUN               sdk install java 21.0.2-tem
 RUN               sdk install java 23.1.2.r21-mandrel
 RUN               sdk default java 17.0.10-tem

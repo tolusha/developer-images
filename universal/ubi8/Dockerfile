@@ -32,19 +32,20 @@ ENV HOME=/home/tooling
 RUN curl -fsSL "https://get.sdkman.io/?rcupdate=false" | bash \
     && bash -c ". /home/tooling/.sdkman/bin/sdkman-init.sh \
              && sed -i "s/sdkman_auto_answer=false/sdkman_auto_answer=true/g" /home/tooling/.sdkman/etc/config \
-	     && sed -i "s/sdkman_auto_env=false/sdkman_auto_env=true/g" /home/tooling/.sdkman/etc/config \
-             && sdk install java 8.0.402-tem \
-             && sdk install java 11.0.22-tem \
-             && sdk install java 17.0.10-tem \
-             && sdk install java 21.0.2-tem \
-             && sdk install java 23.1.2.r21-mandrel \
-             && sdk default java 17.0.10-tem \
-             && sdk install gradle \
-             && sdk install maven \
-             && sdk install jbang \
-             && sdk flush archives \
-             && sdk flush temp" \
-         && chgrp -R 0 /home/tooling && chmod -R g=u /home/tooling
+	     && sed -i "s/sdkman_auto_env=false/sdkman_auto_env=true/g" /home/tooling/.sdkman/etc/config"
+
+RUN               sdk install java 8.0.402-tem
+RUN               sdk install java 11.0.22-tem
+RUN               sdk install java 17.0.10-tem
+RUN               sdk install java 21.0.2-tem
+RUN               sdk install java 23.1.2.r21-mandrel
+RUN               sdk default java 17.0.10-tem
+RUN               sdk install gradle
+RUN               sdk install maven
+RUN               sdk install jbang
+RUN               sdk flush archives
+RUN               flush temp
+RUN         chgrp -R 0 /home/tooling && chmod -R g=u /home/tooling
 
 # sdk home java <version>
 ENV JAVA_HOME_8=/home/tooling/.sdkman/candidates/java/8.0.402-tem

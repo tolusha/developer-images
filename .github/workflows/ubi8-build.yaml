@@ -78,7 +78,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            quay.io/devfile/universal-developer-image
+            quay.io/abazko/universal-developer-image
           flavor: |
             latest=true
             prefix=ubi8-,onlatest=true
@@ -102,7 +102,7 @@ jobs:
           context: universal/ubi8
           platforms: linux/amd64,linux/arm64
           tags: |
-            quay.io/devfile/universal-developer-image:latest
+            quay.io/abazko/universal-developer-image:latest
             ${{ steps.meta.outputs.tags }}
       - name: Get tag with uniq prefix
         id: setTagName
